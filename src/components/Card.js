@@ -9,9 +9,6 @@ class Card extends Component {
         <a href={this.props.link}>
           {this.props.name}
         </a>
-        <CardBody>
-          <Title>{this.props.id}</Title>
-        </CardBody>
       </Container>
     )
   }
@@ -25,22 +22,5 @@ const Container = styled.div`
   border-radius: 5px;
 `
 
-const CardBody = styled.div`
-  padding: 10px;
-`
-
-const Title = styled.h1`
-  font-size: 15px;
-  text-align: center;
-`
-
-const Description = styled.p`
-  font-size: 12px;
-  text-align: center;
-`
-
-const Image = styled.img`
-  width: 100%;
-`
 
 export default Card
