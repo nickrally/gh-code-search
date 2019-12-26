@@ -11,6 +11,7 @@ class CardList extends Component {
             key={index}
             link={item.html_url}
             name={item.name}
+            repo={item.repository.full_name}
           />
         ))}
       </Container>

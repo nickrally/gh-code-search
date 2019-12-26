@@ -5,6 +5,7 @@ class Card extends Component {
   render() {
     return (
       <Container>
+      {this.props.repo} <br />
         <a href={this.props.link}>
           {this.props.name}
         </a>
