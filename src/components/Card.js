@@ -6,11 +6,10 @@ class Card extends Component {
     return (
       <Container>
         <a href={this.props.link}>
-          <Image src={this.props.image} />
+          {this.props.name}
         </a>
         <CardBody>
-          <Title>{this.props.title}</Title>
-          <Description>{this.props.description}</Description>
+          <Title>{this.props.id}</Title>
         </CardBody>
       </Container>
     )

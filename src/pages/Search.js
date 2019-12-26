@@ -8,7 +8,7 @@ import CardList from '../components/CardList'
 
 class Search extends Component {
   state = {
-    repos: []
+    source: []
   }
 
   componentDidMount() {
@@ -28,7 +28,7 @@ class Search extends Component {
       const url = `https://api.github.com/search/code?q=${text}+repo:${repoName}`
     axios
       .get(url)
-      .then(result => console.log(result.data.items))
+      .then(result => this.setState({ source: result.data.items }))
   }
 
 
@@ -40,7 +40,7 @@ class Search extends Component {
     return (
       <Container>
         <InputForm searchCriteria={this.searchCriteria}/>
-        <CardList items={this.state.repos} />
+        <CardList items={this.state.source} />
       </Container>
     )
   }

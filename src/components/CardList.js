@@ -6,13 +6,11 @@ class CardList extends Component {
   render() {
     return (
       <Container>
-        {this.props.items.map(item => (
+        {this.props.items.map((item, index) => (
           <Card
-            key={item.id}
+            key={index}
             link={item.html_url}
-            title={item.name}
-            description={item.description}
-            image={item.owner.avatar_url}
+            name={item.name}
           />
         ))}
       </Container>
