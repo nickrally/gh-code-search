@@ -5,7 +5,7 @@ import Card from './Card'
 class CardList extends Component {
   render() {
     return (
-      <Container>
+      <div>
         {this.props.items.map((item, index) => (
           <Card
             key={index}
@@ -14,7 +14,7 @@ class CardList extends Component {
             repo={item.repository.full_name}
           />
         ))}
-      </Container>
+      </div>
     )
   }
 }
