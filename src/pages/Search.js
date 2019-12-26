@@ -12,22 +12,23 @@ class Search extends Component {
   }
 
   componentDidMount() {
-    this.searchRepos('RallyTools')
+      console.log("component did mount")
+    //this.searchRepos('RallyTools')
   }
 
-  searchRepos(keyword) {
+  /* searchRepos(keyword) {
     this.setState({ repos: [] })
     axios
       .get(`https://api.github.com/search/repositories?q=${keyword}`)
       .then(result => this.setState({ repos: result.data.items }))
-  }
+  } */
 
   searchCode(repoName, text){
       console.log(" REPO NAME: " + repoName + " TEXT: " + text)
       const url = `https://api.github.com/search/code?q=${text}+repo:${repoName}`
     axios
       .get(url)
-      .then(result => console.log(result.data))
+      .then(result => console.log(result.data.items))
   }
 
 
@@ -38,13 +39,7 @@ class Search extends Component {
   render() {
     return (
       <Container>
-        <InputSubmit
-          repoPlaceholder="Enter repo name"
-          textPlaceholder="Enter text to search"
-          buttonText="Search"
-          onSubmit={value => this.searchRepos(value)}
-        />
-    <InputForm searchCriteria={this.searchCriteria}/>
+        <InputForm searchCriteria={this.searchCriteria}/>
         <CardList items={this.state.repos} />
       </Container>
     )
