@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import Card from './Card'
+import "../style.css";
 
 class CardList extends Component {
   render() {
@@ -10,7 +10,7 @@ class CardList extends Component {
           <Card
             key={index}
             link={item.html_url}
-            name={item.name}
+            path={item.path}
             repo={item.repository.full_name}
           />
         ))}
@@ -18,10 +18,5 @@ class CardList extends Component {
     )
   }
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`
 
 export default CardList

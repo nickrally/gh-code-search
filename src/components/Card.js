@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import "../style.css";
 
 class Card extends Component {
   render() {
@@ -7,7 +7,7 @@ class Card extends Component {
       <div className="result">
       {this.props.repo} <br />
         <a href={this.props.link}>
-          {this.props.name}
+          {this.props.path}
         </a>
       </div>
     )

@@ -46,22 +46,22 @@ class SearchForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-      <h4>Search string</h4>
+      <h3>Search string</h3>
         <input
           type="text"
-          placeholder="search text"
+          placeholder="e.g. saas-rally-prod-integrations"
           value={this.state.name}
           onChange={this.handleNameChange}
         />
 
-        <h4>GitHub Repositories</h4>
+        <h3>GitHub Repositories</h3>
 
         {this.state.repos.map((repo, idx) => (
           <div className="repo">
             <input
               key={idx}
               type="text"
-              placeholder={`Repo #${idx + 1} name`}
+              placeholder={`repo ${idx + 1} full name, e.g. RallySoftware/integrations-ci`}
               value={repo.name}
               onChange={this.handleRepoNameChange(idx)}
             />
