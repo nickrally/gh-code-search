@@ -35,18 +35,12 @@ class Search extends Component {
   }
   render() {
     return (
-      <Container>
+      <div>
         <SearchForm searchCriteria={this.searchCriteria}/>
         <CardList items={this.state.source} />
-      </Container>
+      </div>
     )
   }
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
 
 export default Search

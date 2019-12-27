@@ -5,7 +5,7 @@ import Card from './Card'
 class CardList extends Component {
   render() {
     return (
-      <div>
+      <div className="resultlist">
         {this.props.items.map((item, index) => (
           <Card
             key={index}

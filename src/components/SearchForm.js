@@ -29,7 +29,6 @@ class SearchForm extends React.Component {
     evt.preventDefault();
     const { name, repos } = this.state;
     this.props.searchCriteria(this.state)
-    //alert(`Searched for: ${name} in ${repos.length} repo(s)`);
   };
 
   handleAddRepo = () => {
