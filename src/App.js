@@ -2,17 +2,15 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 
-import Navigation from './components/Navigation'
+import Banner from './components/Banner'
 import Search from './pages/Search'
-import About from './pages/About'
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Navigation />
+        <Banner />
         <Route path="/" exact component={Search} />
-        <Route path="/about" exact component={About} />
       </BrowserRouter>
     )
   }
