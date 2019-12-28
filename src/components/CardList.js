@@ -1,28 +1,22 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
 import Card from './Card'
+import "../style.css";
 
 class CardList extends Component {
   render() {
     return (
-      <Container>
-        {this.props.items.map(item => (
+      <div className="resultlist">
+        {this.props.items.map((item, index) => (
           <Card
-            key={item.id}
+            key={index}
             link={item.html_url}
-            title={item.name}
-            description={item.description}
-            image={item.owner.avatar_url}
+            path={item.path}
+            repo={item.repository.full_name}
           />
         ))}
-      </Container>
+      </div>
     )
   }
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`
 
 export default CardList
