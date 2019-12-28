@@ -12,7 +12,6 @@ class Search extends Component {
   }
 
   searchCode(repos, text){
-    console.log("TEXZT ", text)
     const config = {
       auth: {
           username: process.env.REACT_APP_GITHUB_USER,
@@ -20,17 +19,15 @@ class Search extends Component {
         }
     }
     for (let repo of repos){
-      console.log('Searching in ' + repo.name)
       let url = `https://api.github.com/search/code?q=${text}+repo:${repo.name}`
-      console.log(url)
+      //console.log(url)
       axios
       .get(url, config)
-      .then(result => this.setState({ source: this.state.source.concat(result.data.items) })) //hege.concat(stale)
+      .then(result => this.setState({ source: this.state.source.concat(result.data.items) })) 
     }
   }
 
   searchCriteria = (keywords) => {
-    console.log(keywords.text)
     this.searchCode(keywords.repos, keywords.text)
   }
   render() {
