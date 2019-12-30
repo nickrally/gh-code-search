@@ -25,9 +25,8 @@ class Search extends Component {
     }
   }
 
-  searchCriteria = (keywords) => {
-    this.searchCode(keywords.repos, keywords.text)
-  }
+  searchCriteria = (keywords) => this.searchCode(keywords.repos, keywords.text)
+
   render() {
     return (
       <div>
