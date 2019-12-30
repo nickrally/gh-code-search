@@ -56,9 +56,8 @@ class SearchForm extends React.Component {
         <h3>GitHub Repositories</h3>
 
         {this.state.repos.map((repo, idx) => (
-          <div className="repo">
+          <div className="repo" key={idx}>
             <input
-              key={idx}
               type="text"
               placeholder={`repo ${idx + 1} full name, e.g. RallySoftware/integrations-ci`}
               value={repo.name}

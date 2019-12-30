@@ -6,9 +6,9 @@ class CardList extends Component {
   render() {
     return (
       <div className="resultlist">
-        {this.props.items.map((item, index) => (
+        {this.props.items.map((item, idx) => (
           <Card
-            key={index}
+            key={idx}
             link={item.html_url}
             path={item.path}
             repo={item.repository.full_name}
