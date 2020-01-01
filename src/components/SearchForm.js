@@ -15,14 +15,25 @@ class SearchForm extends React.Component {
     this.setState({ text: evt.target.value });
   };
 
-  handleRepoChange = idx => evt => {
+/*   handleRepoChange = idx => evt => {
     const newRepos = this.state.repos.map((repo, sidx) => {
       if (idx !== sidx) return repo;
       return { ...repo, name: evt.target.value };
     });
 
     this.setState({ repos: newRepos });
-  };
+  }; */
+
+  handleRepoChange = (idx) => {
+    return (evt) => {
+        const newRepos = this.state.repos.map((repo, sidx) => {
+          if (idx !== sidx) return repo;
+          return { ...repo, name: evt.target.value };
+        });
+
+        this.setState({ repos: newRepos });
+    };
+  }
 
   handleSubmit = evt => {
     evt.preventDefault();
