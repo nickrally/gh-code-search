@@ -12,7 +12,6 @@ class SearchForm extends React.Component {
   }
 
   handleNameChange = evt => {
-    //this.setState({ searchText: evt.target.value });
     this.setState({ [evt.target.id]: evt.target.value });
   };
 
