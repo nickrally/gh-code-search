@@ -6,13 +6,14 @@ class SearchForm extends React.Component {
   constructor() {
     super();
     this.state = {
-      text: "",
+      searchText: "",
       repos: [{ name: "" }]
     };
   }
 
   handleNameChange = evt => {
-    this.setState({ text: evt.target.value });
+    //this.setState({ searchText: evt.target.value });
+    this.setState({ [evt.target.id]: evt.target.value });
   };
 
   handleRepoNameChange = idx => evt => {
@@ -49,16 +50,15 @@ class SearchForm extends React.Component {
         <input
           type="text"
           placeholder="e.g. saas-rally-prod-integrations"
-          value={this.state.name}
+          id="searchText"
           onChange={this.handleNameChange}
         />
 
         <h3>GitHub Repositories</h3>
 
         {this.state.repos.map((repo, idx) => (
-          <div className="repo">
+          <div className="repo" key={idx}>
             <input
-              key={idx}
               type="text"
               placeholder={`repo ${idx + 1} full name, e.g. RallySoftware/integrations-ci`}
               value={repo.name}

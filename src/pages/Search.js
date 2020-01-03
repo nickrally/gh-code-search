@@ -9,7 +9,7 @@ class Search extends Component {
     source: []
   }
 
-  searchCode(repos, text){
+  searchCode(repos, searchText){
     const config = {
       auth: {
           username: process.env.REACT_APP_GITHUB_USER,
@@ -17,7 +17,7 @@ class Search extends Component {
         }
     }
     for (let repo of repos){
-      let url = `https://api.github.com/search/code?q=${text}+repo:${repo.name}`
+      let url = `https://api.github.com/search/code?q=${searchText}+repo:${repo.name}`
       //console.log(url)
       axios
       .get(url, config)
@@ -25,8 +25,8 @@ class Search extends Component {
     }
   }
 
-  searchCriteria = (keywords) => {
-    this.searchCode(keywords.repos, keywords.text)
+  searchCriteria = (queryParams) => {
+    this.searchCode(queryParams.repos, queryParams.searchText)
   }
   render() {
     return (
