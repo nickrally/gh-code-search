@@ -28,7 +28,7 @@ class SearchForm extends React.Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const { name, repos } = this.state;
+    const { searchText, repos } = this.state;
     this.props.searchCriteria(this.state)
   };
 
