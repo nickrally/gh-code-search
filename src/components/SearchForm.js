@@ -11,11 +11,11 @@ class SearchForm extends React.Component {
     };
   }
 
-  handleNameChange = evt => {
+  handleInputChange = evt => {
     this.setState({ [evt.target.id]: evt.target.value });
   };
 
-  handleRepoChange = (idx) => {
+  handleArrayInputChange = (idx) => {
     return (evt) => {
         const newRepos = this.state.repos.map((repo, sidx) => {
           if (idx !== sidx) return repo;
@@ -52,7 +52,7 @@ class SearchForm extends React.Component {
           type="text"
           placeholder="e.g. saas-rally-prod-integrations"
           id="searchText"
-          onChange={this.handleNameChange}
+          onChange={this.handleInputChange}
         />
 
         <h3>GitHub Repositories</h3>
@@ -63,7 +63,7 @@ class SearchForm extends React.Component {
               type="text"
               placeholder={`repo ${idx + 1} full name, e.g. RallySoftware/integrations-ci`}
               value={repo.name}
-              onChange={this.handleRepoChange(idx)}
+              onChange={this.handleArrayInputChange(idx)}
             />
             <button
               type="button"
