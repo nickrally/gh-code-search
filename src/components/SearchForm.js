@@ -15,14 +15,25 @@ class SearchForm extends React.Component {
     this.setState({ [evt.target.id]: evt.target.value });
   };
 
-  handleRepoNameChange = idx => evt => {
+/*   handleRepoChange = idx => evt => {
     const newRepos = this.state.repos.map((repo, sidx) => {
       if (idx !== sidx) return repo;
       return { ...repo, name: evt.target.value };
     });
 
     this.setState({ repos: newRepos });
-  };
+  }; */
+
+  handleRepoChange = (idx) => {
+    return (evt) => {
+        const newRepos = this.state.repos.map((repo, sidx) => {
+          if (idx !== sidx) return repo;
+          return { ...repo, name: evt.target.value };
+        });
+
+        this.setState({ repos: newRepos });
+    };
+  }
 
   handleSubmit = evt => {
     evt.preventDefault();
@@ -61,7 +72,7 @@ class SearchForm extends React.Component {
               type="text"
               placeholder={`repo ${idx + 1} full name, e.g. RallySoftware/integrations-ci`}
               value={repo.name}
-              onChange={this.handleRepoNameChange(idx)}
+              onChange={this.handleRepoChange(idx)}
             />
             <button
               type="button"
