@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import fetchResults from '../api/api'
+import fetchResults from '../api/Api'
 import SearchForm from '../components/SearchForm'
 import CardList from '../components/CardList'
 
