@@ -10,7 +10,7 @@ it("finds buttons in SearchForm by id", ()=>{
     const dom = render(<App />);
 
     const addRepoButton    = getById(dom.container, 'add-repo-button');
-    const removeRepoButton = getById(dom.container, 'remove-repo-button')
+    const removeRepoButton = getById(dom.container, 'remove-repo-button-0')
     const searchButton     = getById(dom.container, 'search-button');
 
     expect(addRepoButton).toHaveTextContent("Add another repo")

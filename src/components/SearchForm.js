@@ -29,7 +29,7 @@ class SearchForm extends React.Component {
   handleSubmit = evt => {
     evt.preventDefault();
     const { searchText, repos } = this.state;
-    this.props.searchCriteria(this.state)
+    this.props.searchCode(searchText, repos)
   };
 
   handleAddRepo = () => {
@@ -50,9 +50,8 @@ class SearchForm extends React.Component {
       <h3>Search string</h3>
         <input
           type="text"
-          id="search-term-box"
-          placeholder="e.g. saas-rally-prod-integrations"
           id="searchText"
+          placeholder="search term"
           onChange={this.handleInputChange}
         />
 
@@ -62,14 +61,14 @@ class SearchForm extends React.Component {
           <div className="repo" key={idx}>
             <input
               type="text"
-              id="repo-box"
-              placeholder={`repo ${idx + 1} full name, e.g. RallySoftware/integrations-ci`}
+              id={`repo-box-${idx}`}
+              placeholder={`repo ${idx + 1} full name`}
               value={repo.name}
               onChange={this.handleArrayInputChange(idx)}
             />
             <button
               type="button"
-              id="remove-repo-button"
+              id={`remove-repo-button-${idx}`}
               onClick={this.handleRemoveRepo(idx)}
               className="small"
             >

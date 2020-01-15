@@ -8,10 +8,16 @@ const config = {
   }
 
 const fetchResults = url => {
-      const req = axios.get(url, config)
-      return req
-        .then(req => { console.log("GREAT SUCCESS!", req); return req; })
-        .catch(error => { console.error("OH NOES!", error); return Promise.reject(error); });
+    const req = axios.get(url, config)
+    return req
+      .then(req => { 
+        //console.log("GREAT SUCCESS!", req); 
+        return req; 
+      })
+      .catch(error => { 
+        //console.error("OH NOES!", error); 
+        return Promise.reject(error); 
+      });
 }
 
 export default fetchResults;

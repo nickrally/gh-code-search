@@ -26,23 +26,20 @@ var data = {
 
 /* it("makes axios request", async () => {
     const repoName = 'RallyTools/rally-node'
-    const searchText = 'zsessionid'
-    const url = `https://api.github.com/search/code?q=${searchText}+repo:${repoName}`
+    const term = 'zsessionid'
+    const url = `https://api.github.com/search/code?q=${term}+repo:${repoName}`
     expect((await fetchResults(url)).data['total_count']).toBe(4)
 }) */
 
 it("makes mock axios request", async () => {
-    //setup
     mockAxios.get.mockImplementationOnce(() => 
       Promise.resolve({
         data
       })
     ) 
-    //work
     const mockResults = await fetchResults('fake url')
     console.log("FAKE RESPONSE", mockResults)
 
-    //expects
     expect(mockResults.data['items'].length).toEqual(mockResults.data['total_count'])
     expect(mockAxios.get).toHaveBeenCalledWith(
         "fake url", 
