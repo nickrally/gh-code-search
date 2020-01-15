@@ -46,10 +46,11 @@ class SearchForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form id="search-form" onSubmit={this.handleSubmit}>
       <h3>Search string</h3>
         <input
           type="text"
+          id="search-term-box"
           placeholder="e.g. saas-rally-prod-integrations"
           id="searchText"
           onChange={this.handleInputChange}
@@ -61,12 +62,14 @@ class SearchForm extends React.Component {
           <div className="repo" key={idx}>
             <input
               type="text"
+              id="repo-box"
               placeholder={`repo ${idx + 1} full name, e.g. RallySoftware/integrations-ci`}
               value={repo.name}
               onChange={this.handleArrayInputChange(idx)}
             />
             <button
               type="button"
+              id="remove-repo-button"
               onClick={this.handleRemoveRepo(idx)}
               className="small"
             >
@@ -76,12 +79,13 @@ class SearchForm extends React.Component {
         ))}
         <button
           type="button"
+          id="add-repo-button"
           onClick={this.handleAddRepo}
           className="small"
         >
           Add another repo
         </button>
-        <button>Search</button>
+        <button id="search-button">Search</button>
       </form>
     );
   }
