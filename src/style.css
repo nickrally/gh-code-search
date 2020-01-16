@@ -71,6 +71,14 @@
     direction: row;
     align-items: center;
   }
+
+  .repo-name {
+    display: flex;
+    direction: row;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+  }
   
   .repo button {
     margin: 0;
