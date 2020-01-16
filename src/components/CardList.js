@@ -1,18 +1,25 @@
 import React, { Component } from 'react'
 import Card from './Card'
+import Title from './Title'
 import "../style.css";
+
 
 class CardList extends Component {
   render() {
     return (
       <div className="resultlist">
         {this.props.items.map((item, idx) => (
-          <Card
-            key={idx}
-            link={item.html_url}
-            path={item.path}
-            repo={item.repository.full_name}
-          />
+          <div key={idx}>
+            <Title 
+              repo={Object.keys(item)[0]} />
+            {item[Object.keys(item)[0]].map((element, i)=> (
+              <Card
+                key={i}
+                link={element.html_url}
+                path={element.path}
+              />
+            ))}
+          </div>
         ))}
       </div>
     )

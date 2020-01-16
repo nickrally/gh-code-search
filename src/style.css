@@ -37,7 +37,7 @@
     width: 100%;
     appearance: none;
     border-radius: 5px;
-    background-color: #84c00c;
+    background-color: #2E9AFE;
     color: #fff;
     border: none;
     font-size: 16px;
@@ -46,7 +46,7 @@
   }
   
   form button:hover {
-    background-color: #669509;
+    background-color: #2E64FE;
   }
   
   form button:disabled {
@@ -70,6 +70,14 @@
     display: flex;
     direction: row;
     align-items: center;
+  }
+
+  .repo-name {
+    display: flex;
+    direction: row;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
   }
   
   .repo button {
