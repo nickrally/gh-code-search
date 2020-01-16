@@ -12,11 +12,7 @@ class Search extends Component {
     for (let repo of repos){
       let url = `https://api.github.com/search/code?q=${term}+repo:${repo.name}`
       const results = await fetchResults(url)
-      const result = {
-        [repo.name]: results.data.items
-      }
-      //this.setState({ source: this.state.source.concat(results.data.items) })
-      this.setState({ source: this.state.source.concat(result) })
+      this.setState({ source: this.state.source.concat({[repo.name]: results.data.items}) })
     }
     console.log(this.state.source)
   }
